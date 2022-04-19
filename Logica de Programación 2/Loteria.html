@@ -1,0 +1,53 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA DE LOTERÍA</h1>
+
+<script>
+
+	function saltarLinea() {
+
+		document.write("<br>");	
+		document.write("<br>");	
+		document.write("<br>");	
+
+	}  
+
+	function imprimir(frase) {
+
+		document.write(frase);
+		saltarLinea();
+
+	} 
+    
+    n = parseInt(prompt("Elegír un número máximo"))
+
+    function sortea (n) {
+
+        return Math.round(Math.random() * n);
+
+    } 
+
+    var numeroPensado = sortea (n)
+
+    var numeroLanzado = parseInt(prompt("Ingrese un número entre 0 y " + n))
+
+    if (numeroLanzado == numeroPensado) {
+
+        imprimir("usted acertó");
+
+    }
+
+    if (numeroPensado < numeroLanzado) {
+
+        imprimir ("Su número es mayor que el pensado");
+    }
+
+    if (numeroPensado > numeroLanzado) {
+
+        imprimir ("Su número es menor que el pensado");
+    }
+
+        imprimir("El número pensado era " + numeroPensado);
+
+    
+</script>
