@@ -9,12 +9,23 @@
     var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
     var contador = 1;
 
-    while( contador <= cantidad) {
+    while (contador <= cantidad) {
         var ingrediente = prompt("Informe el ingrediente " + contador);
-        ingredientes.push(ingrediente);
-        contador++;
-    }
+        var encontrado = false;
 
-    console.log(ingredientes);
+            for (var posicion = 0; posicion < ingredientes.length; posicion++) {
+
+                if (ingrediente == ingredientes[posicion]) {
+                    encontrado = true;
+                    break;
+                }
+            }
+            if (encontrado == false) {
+                ingredientes.push(ingrediente);
+                contador++;
+            }
+    }
+    
+    document.write("Los ingredientes ingresados son " + ingredientes);
 
 </script>

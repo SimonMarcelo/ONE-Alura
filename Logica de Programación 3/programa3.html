@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<canvas width="600" height="400"></canvas>
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    var colores = ["blue","red","green"];
+    var i = 0
+
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400);
+
+
+    function alterarColor() {
+        return false;
+        for (var i = 0; i < colores.length; i++) {
+            if (i < 2) {
+                pincel.fillStyle = colores[i];
+            }
+            else {
+                pincel.fillStyle = colores[0];
+                
+            }
+        }
+        
+    }   
+
+    function exibirAlerta(evento) {
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        console.log(evento);
+        alterarColor();
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+        console.log(x + " , " + y)
+    }
+    
+
+    pantalla.onclick = exibirAlerta;
+    pantalla.oncontextmenu = alterarColor;
+
+</script>
