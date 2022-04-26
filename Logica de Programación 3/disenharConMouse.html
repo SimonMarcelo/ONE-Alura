@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var puedoDibujar = false;
+    var colorSeleccionado = "blue";
+
+    function seleccionarColor(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        if (x <=50 && y <= 50){
+            colorSeleccionado = "red"
+        }
+        else if (x <=100 && y <= 50){
+            colorSeleccionado = "green"
+        }
+        else if (x <=150 && y <= 50){
+            colorSeleccionado = "blue"
+        }
+    }
+
+    pantalla.onclick = seleccionarColor;
+
+    function dibujarCirculo(evento) {
+
+        if(puedoDibujar) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            if ((x > 154) || (y > 54)){
+                pincel.fillStyle = colorSeleccionado;
+                pincel.beginPath();
+                pincel.arc(x, y, 5, 0, 2 * 3.14);
+                pincel.fill();
+            }
+        }
+
+    }
+
+    pantalla.onmousemove = dibujarCirculo;
+
+    function habilitarDibujar() {
+
+        puedoDibujar = true;
+    }
+
+    function deshabilitarDibujar() {
+
+        puedoDibujar = false;
+    }
+
+    pantalla.onmousedown = habilitarDibujar;
+
+    pantalla.onmouseup = deshabilitarDibujar;
+
+    //DIBUJO DE LOS CUADRADOS DE LA PALETA
+
+    pincel.fillStyle = "red";
+    pincel.fillRect(0,0,50,50);
+    pincel.fillStyle = "green";
+    pincel.fillRect(50,0,50,50);
+    pincel.fillStyle = "blue";
+    pincel.fillRect(100,0,50,50);
+
+    //Interacción con la paleta
+
+
+    
+
+
+
+</script>
