@@ -17,6 +17,7 @@ h1{
 
 p{
     text-align: center;
+    font-size: 19px;
 }
 
 em strong{
@@ -41,7 +42,6 @@ em strong{
 }
 
 ul{
-    list-style: none;
 display: inline-block;
 vertical-align: top;
 width: 20%;
@@ -50,5 +50,4 @@ margin-right: 15%;
 
 .imagen_diferenciales {
     width: 50%;
-
 }
