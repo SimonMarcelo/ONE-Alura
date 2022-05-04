@@ -104,6 +104,10 @@ form label, form legend{
     margin: 0 0 10px;
 }
 
+form textarea{
+    width: 60%;
+}
+
 .input-padron {
     display: block;
     margin: 0 0 20px;
@@ -233,6 +237,12 @@ items:first-child{
 
 .imagen-diferenciales{
     width: 60%;
+    transition: 300ms;
+    box-shadow: 10px 10px 30px 15px #000000;
+}
+
+.imagen-diferenciales:hover{
+    opacity: 0.3;
 }
 
 .video{
@@ -240,3 +250,34 @@ items:first-child{
     margin: 1em auto;
 }
 
+@media screen and (max-width: 480px){
+    h1{
+        text-align: center;
+    }
+    nav{
+        position: static;
+    }
+    .caja,.principal,.contenido-diferenciales,.mapa-contenido,.video{
+        width:auto
+    }
+    .lista-diferenciales, .imagen-diferenciales{
+        width: 100%;
+    }
+
+    .productos{
+        width: 100%;
+        padding: 0%;
+        text-align: center;
+                
+    }
+
+    .productos li{
+        width: 80%;
+        margin: 2%;
+    }
+    
+    form textarea{
+        width: 70%;
+    }
+    
+}
