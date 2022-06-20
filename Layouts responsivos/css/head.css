@@ -1,5 +1,5 @@
 .head {
-    color: #FFFFFF;
+    color: var(--background-blanco);
 
     width: 100%;
 
@@ -12,7 +12,7 @@
     padding-top: .75rem;
     padding-bottom: .75rem;
 
-    border-bottom: 1px solid #103D4A;
+    border-bottom: 1px solid var(--border-cabecera-mobile);
 
     position: absolute;
 }
@@ -26,11 +26,20 @@
 }
 
 .head__enlace {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
 
     display: inline-block;
 
     margin-right: .7rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: .7rem;
     margin-left: .7rem;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .head {
+        flex-direction: row;
+        justify-content: space-between;
+        border: none;
+    }
 }
