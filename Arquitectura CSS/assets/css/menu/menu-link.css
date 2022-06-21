@@ -1,0 +1,15 @@
+.header__list___items{
+    margin-left: 1.25rem;
+    color:#808080;
+    text-decoration: none;
+    text-transform: lowercase;
+}
+
+.activo{
+    color: #333333;
+    font-weight: bold;
+}
+
+.header__list___items:hover{
+    text-decoration: underline;
+}
